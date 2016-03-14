@@ -1,18 +1,20 @@
 public class winningCondition
 {
+   private Model model;
    private int winning;
    private int num;
    private int player;
    private int col;
    private int[][] connect_4;
    
-   public winningCondition(int num, int player, int col,int connect_4[][])
+   public winningCondition(Model model)
    {
-      this.num = num;
-      this.player = player;
-      this.col = col;
-      this.connect_4 = connect_4;
-      this.winning = checkWinning();
+      this.model = model;
+      //this.num = num;
+      this.player = model.getPlayer();
+      //this.col = col;
+      this.connect_4 = model.getSize();
+      this.winning = model.getWinning();
    }
    
    public int checkWinning()
