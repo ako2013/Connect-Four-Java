@@ -1,11 +1,15 @@
+//this class returns 1 if a player win
+//return 0 if not
+
 public class winningCondition
 {
    private Model model;
-   private int winning;
-   private int num;
-   private int player;
-   private int col;
-   private int[][] connect_4;
+   private int winning;       //return 1 if a player win
+   private int num;           
+   private int player;        //player #: 1 or 2
+   private int col;           //column that player input
+   private int[][] connect_4; //store the table
+   private int row;           //store the size of the table (row * row) e.g 6x6
    
    public winningCondition(Model model)
    {
@@ -15,6 +19,7 @@ public class winningCondition
       //this.col = col;
       this.connect_4 = model.getSize();
       this.winning = model.getWinning();
+      this.row = model.getRow();
    }
    
    public int checkWinning()
