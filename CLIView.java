@@ -23,7 +23,16 @@ public class CLIView
          if(model.getWinning() == 1)
          {
             printBoard();
-            System.out.println("Player have won");
+            System.out.println("Player have 1 won");
+            break;
+         }
+         printBoard();
+         this.move = input.nextInt();
+         model.setMove(move-1,2);
+         if(model.getWinning() == 1)
+         {
+            printBoard();
+            System.out.println("Player have 2 won");
             break;
          }
       }while(move != 9);

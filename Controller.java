@@ -1,8 +1,9 @@
 public class Controller
 {
-   public Controller()
+   private int size;
+   public Controller(int size)
    {
-      //winningCondition WC = new winningCondition(this);
+      this.size = size;
    }  
    public static void main (String[]args)
    {

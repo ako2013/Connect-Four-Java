@@ -40,11 +40,10 @@ public class Model
            }else check = 0;
        }check =0; //reset the count for next condition
        
-       /*check diagonally up/down
+       //check diagonally up/down
        for(int k = 0; k < size*2;k++){          //check diagonally up
            for(int j = 0; j <= k; j++){
                int i = k-j;
-               //int x = size-i;
                if(i < size && j < size){
                    if(connect_4[i][j] == player){
                        check++;
@@ -54,7 +53,7 @@ public class Model
            }check = 0; //reset the count for next condition
            for(int j = 0; j <= k; j++){     //check diagonally down
                int i = k-j;
-               int x = size-i;
+               int x = size-1-i;
                if(i < size && j < size){
                    if(connect_4[x][j] == player){
                        check++;
@@ -62,7 +61,7 @@ public class Model
                    }else check = 0;
                }
            }check = 0;
-       }*/return 0;
+       }return 0;
    }
    
    public int insertBoard(int move, int player){
