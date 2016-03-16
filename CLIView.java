@@ -1,3 +1,7 @@
+//example for board size 6x6
+//not implant A.I yet
+//version 1.0
+
 import java.util.*;
 
 public class CLIView
@@ -13,7 +17,7 @@ public class CLIView
       
       Scanner input = new Scanner(System.in);
       
-      System.out.println("Welcome to conect 4");
+      System.out.println("Welcome to connect 4");
       do
       {
          printBoard();
@@ -37,6 +41,7 @@ public class CLIView
          }
       }while(move != 9);
    }
+   //rotated the board for easy access 2D array
    public void printBoard()
    {
       System.out.println("1 2 3 4 5 6");
