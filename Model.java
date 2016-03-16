@@ -83,7 +83,7 @@ public class Model
    public int getWinning()  {return winning;}
    public int getRow()      {return row;} 
    
-   //also return the winning condition 
+   //insert to board and also return the winning condition 
    public int setMove(int move, int player){
       return this.winning = insertBoard(move,player);
    }
