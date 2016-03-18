@@ -1,6 +1,8 @@
 # Connect-Four-Java
 
-<i>Description</i>: A small program replicate the Connect Four Game using a 2D array. Implemented for PvP and PvE
+<i>Description</i>: A small program replicate the Connect Four Game using a 2D array. Implemented for PvP and PvE<br>
+<a href="https://en.wikipedia.org/wiki/Connect_Four">Wiki page</a> for Connect Four</br>
+<center><img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Connect_Four.gif"></img></center>
 
 <h2>Connect Four</h2>
 
