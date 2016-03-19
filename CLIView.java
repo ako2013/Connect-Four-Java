@@ -16,28 +16,43 @@ public class CLIView
       this.connect_4 = model.getTable();
       
       Scanner input = new Scanner(System.in);
+      int checkFullRow;
       
       System.out.println("Welcome to connect 4");
       do
-      {
-         printBoard();
-         System.out.println("Please choose a number (1->6)");
-         this.move = input.nextInt();
-         model.setMove(move-1,1);
+      {	  
+         do {
+        	 printBoard();
+             System.out.println("Player 1: Please choose a number (1->6)");
+             this.move = input.nextInt();
+        	 checkFullRow = model.setMove(move-1,1);
+         } while (checkFullRow == 2);
+         
          if(model.getWinning() == 1)
          {
             printBoard();
             System.out.println("Player have 1 won");
             break;
+         } else if (model.isDraw(connect_4)) {
+        	 System.out.println("DRAW GAME!");
+        	 break;
          }
-         printBoard();
-         this.move = input.nextInt();
-         model.setMove(move-1,2);
+         
+         do {
+        	 printBoard();
+             System.out.println("Player 2: Please choose a number (1->6)");
+             this.move = input.nextInt();
+        	 checkFullRow = model.setMove(move-1,2);
+         } while (checkFullRow == 2);
+         
          if(model.getWinning() == 1)
          {
             printBoard();
             System.out.println("Player have 2 won");
             break;
+         } else if (model.isDraw(connect_4)) {
+        	 System.out.println("DRAW GAME!");
+        	 break;
          }
       }while(move != 9);
    }
