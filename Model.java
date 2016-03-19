@@ -1,18 +1,22 @@
+//Model.java
+//version 1.0
+
 public class Model
 {
+   //variables declaration
    private int[][] connect_4;
    private int row;
    private int winning;   
    private int winningSize;
    private int size;
-   
+   //constructor
    public Model(int size)
    {
       this.connect_4 = new int[size][size];
       this.size = size;
       this.winningSize = 4;
    }
-   
+   //method checking for winning
    public int checkWinning(int move, int player, int col){
         int check = 0;
       
@@ -42,7 +46,7 @@ public class Model
                    if(connect_4[i][j] == player){
                        check++;
                        if(check == winningSize) return 1;
-                   } else check = 0; //Reset count 
+                   } else check = 0; //Reset count
 
                }
            }
@@ -63,7 +67,7 @@ public class Model
        }
        return 0;
    }
-   
+   //method to insert into the table
    public int insertBoard(int move, int player){
       for(int i = 0; i < size;i++)
       {
@@ -77,18 +81,26 @@ public class Model
       }
       return 0;
    }
-   
-   public boolean isDraw(int[][] board) {
-       for (int i = 0; i < board.length; i++)
-           for (int j = 0; j < board[i].length; j++)
-               if (board[i][j] == 0)
-                   return false;
-       return true; // Cells are all now occupied
+   //check if the table is full and game will result with a draw
+   public boolean isDraw() {
+       for (int i = 0; i < size-1; i++){
+         if(connect_4[i][size-1] == 0) return false;
+       }
+       return false;
    }
-   
    //Insert to board and also return the winning condition 
    public int setMove(int move, int player){
       return this.winning = insertBoard(move,player);
+   }
+   //validating user input column exceed or less than allowed 
+   public boolean isOutbound (int move){
+      if(move <= 0 && move > size) return true;
+      return false;
+   }
+   //validating user input on a full column 
+   public boolean isFullColumn (int move){
+      if(connect_4[move][size-1] != 0)return true;
+      return false;
    }
    
    public int[][] getTable() {return connect_4;}
