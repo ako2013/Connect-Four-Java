@@ -9,12 +9,15 @@ public class Model
    private int winning;   
    private int winningSize;
    private int size;
+   private int player;
+   
    //constructor
    public Model(int size)
    {
       this.connect_4 = new int[size][size];
       this.size = size;
       this.winningSize = 4;
+      this.player = 1;
    }
    //method checking for winning
    public int checkWinning(int move, int player, int col){
@@ -103,9 +106,22 @@ public class Model
       return false;
    }
    
+   public void turn()
+   {
+	   if (player == 1)
+	   {
+		   player = 2;
+	   }
+	   else
+	   {
+		   player = 1;
+	   }
+   }
+   
    public int[][] getTable() {return connect_4;}
-   public int getSize()     {return size;}
-   public int getWinning()  {return winning;}
-   public int getRow()      {return row;} 
+   public int getSize()      {return size;}
+   public int getWinning()   {return winning;}
+   public int getRow()       {return row;} 
+   public int getPlayer()    {return player;}
   
 }
