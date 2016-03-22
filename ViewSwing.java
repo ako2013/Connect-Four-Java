@@ -15,17 +15,19 @@ public class ViewSwing
 	private static final ImageIcon RED = new ImageIcon("Red.png"); 
 	private static final ImageIcon BLUE = new ImageIcon("Blue.png"); 
 	private Model m;
-	private int dimension;	
+	private int dimension;
+	private int winningSize;
 	private JLabel[][] images;
 	private JButton[] buttons;
 	
-	public ViewSwing(int dimension)
+	public ViewSwing(int dimension, int winningSize)
 	{
 		this.dimension = dimension;
+		this.winningSize = winningSize;
 		//Array of images and array of buttons
 		images = new JLabel[dimension][dimension];
 		buttons = new JButton[dimension];
-		m = new Model(dimension);
+		m = new Model(dimension, winningSize);
 		draw();
 	}
 	
@@ -39,14 +41,10 @@ public class ViewSwing
 		//Create the model object for the connect four class
 		//int dimension = Integer.parseInt(args[0]);	
 		int dimension = 10;
-		
-		
-		
-		
+
 		//Make Connect four frame
 		JFrame container = new JFrame("Connect 4");
 		container.setLayout(new GridLayout(dimension + 1, dimension, 5, 5));
-		
 		
 		
 		for (int i = 0; i < buttons.length; i++)
@@ -146,8 +144,5 @@ public class ViewSwing
 		}
 		
 	}
-		
-		
-		
-	
+
 }

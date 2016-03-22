@@ -12,11 +12,11 @@ public class Model
    private int player;
    
    //constructor
-   public Model(int size)
+   public Model(int size, int winningSize)
    {
       this.connect_4 = new int[size][size];
       this.size = size;
-      this.winningSize = 4;
+      this.winningSize = winningSize;
       this.player = 1;
    }
    //method checking for winning

@@ -16,9 +16,7 @@ public class CLIView
       this.connect_4 = model.getTable();
       
       Scanner input = new Scanner(System.in);
-      int checkFullRow;
-      
-      System.out.println("Welcome to connect 4");
+      int checkFullRow;            
       do
       {	  
          do {
