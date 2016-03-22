@@ -33,7 +33,7 @@ public class CLIView
             printBoard();
             System.out.println("Player have 1 won");
             break;
-         } else if (model.isDraw(connect_4)) {
+         } else if (model.isDraw()) {
         	 System.out.println("DRAW GAME!");
         	 break;
          }
@@ -50,7 +50,7 @@ public class CLIView
             printBoard();
             System.out.println("Player have 2 won");
             break;
-         } else if (model.isDraw(connect_4)) {
+         } else if (model.isDraw()) {
         	 System.out.println("DRAW GAME!");
         	 break;
          }
