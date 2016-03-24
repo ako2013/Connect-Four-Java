@@ -1,5 +1,6 @@
 //Model.java
 //version 1.0
+import java.util.Arrays;
 
 public class Model
 {
@@ -116,6 +117,11 @@ public class Model
 	   {
 		   player = 1;
 	   }
+   }
+   
+   public void print()
+   {
+	   System.out.println(Arrays.deepToString(connect_4));
    }
    
    public int[][] getTable() {return connect_4;}
