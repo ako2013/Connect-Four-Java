@@ -72,11 +72,13 @@ public class Model
    }
    //method to insert into the table
    public int insertBoard(int move, int player){
+	   
       for(int i = 0; i < size;i++)
       {
          if(connect_4[move][i] == 0)
          {
             connect_4[move][i] = player;
+            System.out.println("insert at index x pos: " + move + " and y pos: " + i);
             return checkWinning(move,player,i);
          } else if (connect_4[move][size - 1] != 0) {
         	 return 2; //Cannot choose row because it's full
@@ -86,10 +88,10 @@ public class Model
    }
    //check if the table is full and game will result with a draw
    public boolean isDraw() {
-       for (int i = 0; i < size-1; i++){
+       for (int i = 0; i < size; i++){
          if(connect_4[i][size-1] == 0) return false;
        }
-       return false;
+       return true;
    }
    //Insert to board and also return the winning condition 
    public int setMove(int move, int player){
