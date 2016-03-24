@@ -1,8 +1,10 @@
+import java.util.Scanner;
 
 public class Controller2 
 {
 	public static void main(String[] args)
 	{
+<<<<<<< HEAD
 		try 
 		{
 			int size = Integer.parseInt(args[0]);
@@ -27,5 +29,14 @@ public class Controller2
 			System.out.println("Please input two integers");
 		}
 		
+=======
+		System.out.println("Welcome to connect 4");
+		Scanner input = new Scanner(System.in);
+		System.out.println("Enter the board size: ");
+		int boardSize = input.nextInt();
+		System.out.println("Enter the connection size: ");
+		int winningSize = input.nextInt();
+		ViewSwing tmp = new ViewSwing(10, 5);
+>>>>>>> origin/master
 	}
 }
