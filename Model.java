@@ -94,33 +94,13 @@ public class Model
        }
        return true;
    }
-   //Insert to board and also return the winning condition 
-   public int setMove(int move, int player){
-      return this.winning = insertBoard(move,player);
-   }
-   //validating user input column exceed or less than allowed 
-   public boolean isOutbound (int move){
-      if(move <= 0 && move > size) return true;
-      return false;
-   }
-   //validating user input on a full column 
-   public boolean isFullColumn (int move){
-      if(connect_4[move][size-1] != 0)return true;
-      return false;
-   }
-   
+   //function to return the player's turn to play   
    public void turn()
    {
-	   if (player == 1)
-	   {
-		   player = 2;
-	   }
-	   else
-	   {
-		   player = 1;
-	   }
+	   if (player == 1) player = 2;
+	   else             player = 1;
    }
-   
+   //function print the array
    public void print()
    {
 	   System.out.println(Arrays.deepToString(connect_4));
@@ -129,7 +109,6 @@ public class Model
    public int[][] getTable() {return connect_4;}
    public int getSize()      {return size;}
    public int getWinning()   {return winning;}
-   public int getRow()       {return row;} 
    public int getPlayer()    {return player;}
   
 }
