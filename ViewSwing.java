@@ -8,6 +8,11 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
+/**
+ * This ViewSwing class creates a
+ * @author Hezekiah Valdez and Ravuth Long
+ *
+ */
 public class ViewSwing 
 {	
 	
