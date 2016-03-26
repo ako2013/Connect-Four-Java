@@ -99,6 +99,7 @@ public class ViewSwing
 						{
 							m = new Model(dimension, winningSize);
 							redraw(container);
+							m.turn();
 						}
 						else
 						{
