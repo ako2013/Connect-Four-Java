@@ -29,10 +29,7 @@ public class Controller2
 					new ViewSwing(size , winSize);
 				}
 		}		
-		catch (NumberFormatException e) 
-		{
-			System.out.println("Please input two integers");
-		}
+
 		
 
 }
