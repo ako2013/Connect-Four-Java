@@ -1,4 +1,3 @@
-
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -90,18 +89,21 @@ public class ViewSwing
 							images[m.getSize() - 1 - i][xposition].setIcon(RED);
 						}
 					}
-					//Change the current turn counter
-					m.turn();
+					//Change the current turn counter					
 					//Options depending on whether a player has won, the game is a draw, or the column is full.
 					if(winCondition == 1)
 					{
-						int selectedOption = JOptionPane.showConfirmDialog(null, "Player " + m.getPlayer() + " Wins! \n" + "Play again?", "Congratulations", JOptionPane.YES_NO_CANCEL_OPTION);
+						//Asks for a new game. Closes if no.
+						int selectedOption = JOptionPane.showConfirmDialog(null, "Player " + m.getPlayer() + " Wins! \n" + "Play again?", "Congratulations", JOptionPane.YES_NO_OPTION);
 						if(selectedOption == JOptionPane.YES_OPTION)
 						{
 							m = new Model(dimension, winningSize);
-							draw();
+							redraw(container);
 						}
-						
+						else
+						{
+							container.dispose();
+						}
 					}
 					if(winCondition == 2) 
 					{
@@ -112,8 +114,9 @@ public class ViewSwing
 					{
 						JOptionPane.showMessageDialog(container, "Game is a draw");
 					}
-					
+					m.turn();
 				}
+				
 			}
 			
 			buttons[i].addActionListener(new ButtonListener());			
@@ -137,7 +140,7 @@ public class ViewSwing
 			}
 		}
 		
-		//Add the buttons to the frams
+		//Add the buttons to the frame
 		for (JButton x: buttons)
 		{
 			container.add(x);
@@ -149,6 +152,21 @@ public class ViewSwing
 		container.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		container.setVisible(true);
 		
+	}
+	
+	/**
+	 * A method that draw the entirety of the board
+	 * @param container The Jframe to redraw
+	 */
+	private void redraw(JFrame container) 
+	{
+		for (int i = 0; i < images.length; i++)
+		{
+			for (int j = 0; j < images.length; j++)
+			{
+				images[i][j].setIcon(UNSET);;
+			}
+		}		
 	}
 
 
