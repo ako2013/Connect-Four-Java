@@ -1,13 +1,14 @@
-import java.util.Scanner;
+
+
 
 public class Controller2 
 {
 	public static void main(String[] args)
 	{
-		try 
-		{
+			//Pass the user arguments as integers 
 			int size = Integer.parseInt(args[0]);
 			int winSize = Integer.parseInt(args[3]);
+			//limit the acceptable numbers
 			if (size > 10 || size < 4)
 			{
 				System.out.println("Please input a size smaller than 10 and greater than 4");				
@@ -20,20 +21,9 @@ public class Controller2
 			{
 				System.out.println("Please ensure that the win size is less than the board size");
 			}
+			//Make the board
 			new ViewSwing(size , winSize);
 			
 		} 
-		catch (NumberFormatException e) 
-		{
-			System.out.println("Please input two integers");
-		}
-		
-		System.out.println("Welcome to connect 4");
-		Scanner input = new Scanner(System.in);
-		System.out.println("Enter the board size: ");
-		int boardSize = input.nextInt();
-		System.out.println("Enter the connection size: ");
-		int winningSize = input.nextInt();
-		ViewSwing tmp = new ViewSwing(boardSize, winningSize);
-	}
+	
 }
