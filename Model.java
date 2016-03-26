@@ -102,7 +102,6 @@ public class Model
          if(connect_4[move][i] == 0)
          {
             connect_4[move][i] = player;
-            System.out.println("insert at index x pos: " + move + " and y pos: " + i);
             return checkWinning(move,player,i);
          } else if (connect_4[move][size - 1] != 0) {
         	 return 2; //Cannot choose row because it's full
