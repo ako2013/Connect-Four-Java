@@ -6,8 +6,8 @@ public class Controller2
 		try
 		{
 			//Pass the user arguments as integers 
-			int size = 10;
-			int winSize = 4;
+			int size = Integer.parseInt(args[0]);;
+			int winSize = Integer.parseInt(args[1]);
 			//limit the acceptable numbers
 			if (size > 10 || size < 4)
 			{
